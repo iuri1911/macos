@@ -1,0 +1,13 @@
+#video-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  #video-desktop {
+    display: none;
+  }
+
+  #video-mobile {
+    display: block;
+  }
+}

@@ -1,0 +1,118 @@
+<!-- sections/new-accordion-banner.liquid -->
+{{ 'banner-slider.css' | asset_url | stylesheet_tag }}
+{{ 'video.css' | asset_url | stylesheet_tag }}
+
+
+<div class="banner" id="Banner-{{ section.id }}">
+  {%- render 'video-banner' -%}
+</div>
+
+{% schema %}
+{
+   "name":"Banner Slider",
+   "tag":"section",
+   "class":"spaced-section spaced-section--full-width",
+   "settings":[
+      {
+         "type":"checkbox",
+         "id":"adapt_height_first_image",
+         "default":false,
+         "label":"t:sections.image-banner.settings.adapt_height_first_image.label"
+      },
+      {
+         "type":"select",
+         "id":"desktop_banner_height",
+         "options":[
+            {
+               "value":"70vh",
+               "label":"Small"
+            },
+            {
+               "value":"80vh",
+               "label":"Medium"
+            },
+            {
+               "value":"90vh",
+               "label":"Large"
+            }
+         ],
+         "default":"70vh",
+         "label":"Desktop Banner Height"
+      },
+      {
+         "type":"select",
+         "id":"mobile_banner_height",
+         "options":[
+            {
+               "value":"50vh",
+               "label":"Small"
+            },
+            {
+               "value":"60vh",
+               "label":"Medium"
+            },
+            {
+               "value":"70vh",
+               "label":"Large"
+            }
+         ],
+         "default":"70vh",
+         "label":"Mobile Banner Height"
+      },
+      {
+         "type":"range",
+         "id":"image_overlay_opacity",
+         "min":0,
+         "max":100,
+         "step":10,
+         "unit":"%",
+         "label":"t:sections.image-banner.settings.image_overlay_opacity.label",
+         "default":0
+      }
+   ],
+   "blocks":[
+      {
+         "type": "text",
+         "name": "Image Banner",
+         "settings": [
+            {
+               "type":"image_picker",
+               "id":"image",
+               "label":"Desktop Image"
+            },
+            {
+               "type":"image_picker",
+               "id":"image_mobile",
+               "label":"Mobile Image"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button TEXT"
+            },
+            {
+                "type": "url",
+                "id": "button_url",
+                "label": "Button URL"
+            },
+            {
+               "type": "text",
+               "id": "banner_message",
+               "label": "Banner Message"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_video",
+                "label": "Enable Video",
+                "default": false
+            }
+         ]
+      }
+   ],
+  "presets": [
+      {
+          "name":"Banner Slider"
+      }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,83 @@
+
+
+
+.banner_message{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(35 89 77 / 50%);
+    color: #FFF;
+    padding: 1rem;
+    font-size: 1.2rem;
+    width: fit-content;
+    max-width: 90vw;
+    display: none;
+}
+.banner .flickity-page-dots{
+    z-index: 2;
+    display: block;
+    bottom: 0;
+}
+
+.banner__swiper-slide .flickity-button{
+    display: none;
+  }
+  @media screen and (min-width: 750px) {
+      .banner ul{
+          width: 100%;
+          margin: 0 auto;
+      }
+      .banner_message{
+          font-size: 2rem;
+      }
+  }
+  @media screen and (max-width: 749px) {
+      .banner ul{
+          margin: 0;
+      }
+      .banner .flickity-page-dots{
+          bottom: -15px;
+      }
+  }
+  .banner__swiper-slide li:not(:first-child) .banner__media{
+      display: none;
+  }
+  .banner ul{
+      list-style: none;
+      padding: 0;
+  }
+  .banner ul li{
+      width: 100%;
+  }
+
+  .banner__media video{
+      object-fit: cover;
+  }
+  .banner__btn{
+    font-family: Ruda;
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    padding: 8px 20px;
+    border: 2px solid #19433a;
+    border-radius: 26px;
+    background-color: #fffbf5;
+    color: #19433a;
+    font-weight: 900;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 2px 2px #19433a;
+    transform: translate(-2px,-2px) translate(-50%);
+    text-decoration: none;
+    min-width: 230px;
+    min-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 2;
+    transition: all .5s cubic-bezier(.04,.95,.56,1.02);
+  }
+  .banner__btn:hover{
+    box-shadow: none;
+    transform: translate(0) translate(-50%);
+  }
